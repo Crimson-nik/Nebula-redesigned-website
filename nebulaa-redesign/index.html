@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebulaa — AI Business Suite | Redesigned</title>
+  <meta name="description"
+    content="Nebulaa automates your marketing campaigns, tracks finances, and delivers strategic insights — all powered by specialised AI agents built for founders." />
+  <meta name="author" content="Nebulaa" />
+  <meta name="keywords" content="AI, Business Suite, Startup, Marketing AI, Finance AI, Strategy AI, Nebulaa" />
+  <meta property="og:title" content="Nebulaa — AI-Powered Marketing, Finance & Strategy for Founders" />
+  <meta property="og:description"
+    content="Stop juggling. Start building. Nebulaa's AI agents handle your marketing, finances, and strategy." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+</head>
+
+<body>
+
+  <!-- =============================================
+       NAVIGATION BAR
+       — FIX: Added Products dropdown, Pricing link, About link
+       ============================================= -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo">NEBULAA</a>
+
+      <div class="nav-links" id="navLinks">
+        <!-- FIX: Products dropdown instead of single "Product" link -->
+        <div class="nav-dropdown">
+          <a href="#products">Products ▾</a>
+          <div class="dropdown-menu">
+            <a href="#gravity">
+              <div class="dropdown-icon" style="background: rgba(236,72,153,0.15);">🚀</div>
+              <div class="dropdown-label">
+                <span>Gravity</span>
+                <small>Marketing AI Agent</small>
+              </div>
+            </a>
+            <a href="#infinity">
+              <div class="dropdown-icon" style="background: rgba(6,182,212,0.15);">💰</div>
+              <div class="dropdown-label">
+                <span>Infinity</span>
+                <small>Finance AI Agent</small>
+              </div>
+            </a>
+            <a href="#singularity">
+              <div class="dropdown-icon" style="background: rgba(16,185,129,0.15);">🧠</div>
+              <div class="dropdown-label">
+                <span>Singularity</span>
+                <small>Strategy AI Agent</small>
+              </div>
+            </a>
+            <a href="#atom">
+              <div class="dropdown-icon" style="background: rgba(245,158,11,0.15);">⚙️</div>
+              <div class="dropdown-label">
+                <span>Atom</span>
+                <small>Product Foundation</small>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#audience">Who It's For</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="nav-cta">
+        <!-- FIX: Two CTAs — low-friction trial + demo booking -->
+        <button class="btn btn-secondary btn-sm" onclick="openTrialModal()">Try Free →</button>
+        <button class="btn btn-primary btn-sm" onclick="openDemoModal()">Book Demo</button>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO SECTION
+       — FIX: Clear, specific value proposition
+       — FIX: Added product preview mockup
+       — FIX: Added "Try Free" CTA alongside "Book Demo"
+       ============================================= -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal-blur">
+          <span class="badge"><span class="icon">🤖</span> AI Business Suite for Founders</span>
+        </div>
+
+        <!-- FIX: Specific tagline instead of vague "Build faster. Decide better." -->
+        <h1 class="reveal-blur delay-1">
+          <span class="gradient-text">AI-Powered Marketing, Finance & Strategy</span>
+          — Built for Founders
+        </h1>
+
+        <!-- FIX: Concrete subtitle explaining what the product actually does -->
+        <p class="hero-subtitle reveal-blur delay-2">
+          Nebulaa automates your marketing campaigns, tracks your finances, and delivers strategic insights
+          — so you can stop juggling tools and start building your company.
+        </p>
+
+        <!-- FIX: Two CTAs — instant trial with email only + formal demo -->
+        <div class="hero-ctas reveal-blur delay-3">
+          <button class="btn btn-primary" onclick="openTrialModal()">
+            Start Free Trial →
+          </button>
+          <button class="btn btn-secondary" onclick="openDemoModal()">
+            Book a Demo
+          </button>
+        </div>
+
+        <!-- FIX: Show the 4 agents as floating cards so users immediately see product scope -->
+        <div class="floating-agents">
+          <div class="floating-agent">
+            <div class="agent-icon" style="background: rgba(236,72,153,0.15);">🚀</div>
+            <span>Gravity</span>
+          </div>
+          <div class="floating-agent">
+            <div class="agent-icon" style="background: rgba(6,182,212,0.15);">💰</div>
+            <span>Infinity</span>
+          </div>
+          <div class="floating-agent">
+            <div class="agent-icon" style="background: rgba(16,185,129,0.15);">🧠</div>
+            <span>Singularity</span>
+          </div>
+          <div class="floating-agent">
+            <div class="agent-icon" style="background: rgba(245,158,11,0.15);">⚙️</div>
+            <span>Atom</span>
+          </div>
+        </div>
+
+        <!-- FIX: Dashboard preview mockup — original site had NO screenshots -->
+        <div class="hero-preview reveal-scale delay-4">
+          <div class="hero-preview-glow"></div>
+          <div class="product-screenshot" style="height:320px; margin:0; border-radius: var(--radius-xl);">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-content" style="width:90%; padding-top:36px;">
+              <!-- Simulated dashboard -->
+              <div style="display:grid; grid-template-columns: 200px 1fr; gap:16px; width:100%; height:240px;">
+                <!-- Sidebar -->
+                <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:16px;">
+                  <div
+                    style="height:8px; width:60%; background:rgba(139,92,246,0.3); border-radius:4px; margin-bottom:16px;">
+                  </div>
+                  <div
+                    style="height:6px; width:80%; background:rgba(255,255,255,0.06); border-radius:3px; margin-bottom:10px;">
+                  </div>
+                  <div
+                    style="height:6px; width:70%; background:rgba(255,255,255,0.06); border-radius:3px; margin-bottom:10px;">
+                  </div>
+                  <div
+                    style="height:6px; width:90%; background:rgba(139,92,246,0.15); border-radius:3px; margin-bottom:10px;">
+                  </div>
+                  <div
+                    style="height:6px; width:60%; background:rgba(255,255,255,0.06); border-radius:3px; margin-bottom:10px;">
+                  </div>
+                  <div style="height:6px; width:75%; background:rgba(255,255,255,0.06); border-radius:3px;"></div>
+                </div>
+                <!-- Main content -->
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+                    <div
+                      style="background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.15); border-radius:8px; padding:16px;">
+                      <div
+                        style="height:6px; width:50%; background:rgba(236,72,153,0.3); border-radius:3px; margin-bottom:8px;">
+                      </div>
+                      <div style="height:20px; width:40%; background:rgba(236,72,153,0.2); border-radius:4px;"></div>
+                    </div>
+                    <div
+                      style="background:rgba(6,182,212,0.08); border:1px solid rgba(6,182,212,0.15); border-radius:8px; padding:16px;">
+                      <div
+                        style="height:6px; width:50%; background:rgba(6,182,212,0.3); border-radius:3px; margin-bottom:8px;">
+                      </div>
+                      <div style="height:20px; width:40%; background:rgba(6,182,212,0.2); border-radius:4px;"></div>
+                    </div>
+                    <div
+                      style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.15); border-radius:8px; padding:16px;">
+                      <div
+                        style="height:6px; width:50%; background:rgba(16,185,129,0.3); border-radius:3px; margin-bottom:8px;">
+                      </div>
+                      <div style="height:20px; width:40%; background:rgba(16,185,129,0.2); border-radius:4px;"></div>
+                    </div>
+                  </div>
+                  <div
+                    style="flex:1; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:16px; display:flex; flex-direction:column; gap:8px;">
+                    <div style="height:6px; width:30%; background:rgba(139,92,246,0.2); border-radius:3px;"></div>
+                    <div
+                      style="flex:1; display:grid; grid-template-columns:repeat(7,1fr); gap:4px; align-items:end; padding-top:8px;">
+                      <div style="background:rgba(139,92,246,0.15); border-radius:3px 3px 0 0; height:40%;"></div>
+                      <div style="background:rgba(139,92,246,0.2); border-radius:3px 3px 0 0; height:55%;"></div>
+                      <div style="background:rgba(139,92,246,0.25); border-radius:3px 3px 0 0; height:35%;"></div>
+                      <div style="background:rgba(139,92,246,0.3); border-radius:3px 3px 0 0; height:70%;"></div>
+                      <div style="background:rgba(139,92,246,0.35); border-radius:3px 3px 0 0; height:60%;"></div>
+                      <div style="background:rgba(139,92,246,0.4); border-radius:3px 3px 0 0; height:85%;"></div>
+                      <div style="background:rgba(139,92,246,0.5); border-radius:3px 3px 0 0; height:95%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       THE PROBLEM SECTION
+       ============================================= -->
+  <section class="problem-section" id="problem">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">⚠️</span> The Problem</span>
+        <h2>Why most early-stage startups <span class="gradient-text">struggle</span></h2>
+        <p>Founders wear too many hats. Disconnected decisions and forgotten learnings lead to wasted time and money.
+        </p>
+      </div>
+
+      <div class="problem-grid stagger-children">
+        <div class="problem-card reveal">
+          <div class="card-icon" style="background: rgba(239,68,68,0.1);">📡</div>
+          <h3>Market Signals Misread</h3>
+          <p>Without proper tools, founders rely on gut feeling instead of data-driven insights.</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="card-icon" style="background: rgba(239,68,68,0.1);">💸</div>
+          <h3>Burn Rate Blindness</h3>
+          <p>Spending happens faster than tracking, leading to surprise cash crunches.</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="card-icon" style="background: rgba(239,68,68,0.1);">🎯</div>
+          <h3>Scattered Marketing</h3>
+          <p>Posts go out without strategy. No compounding effect. Just noise.</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="card-icon" style="background: rgba(239,68,68,0.1);">🔀</div>
+          <h3>Strategy Drift</h3>
+          <p>The gap between vision and execution grows wider every week.</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="card-icon" style="background: rgba(239,68,68,0.1);">😴</div>
+          <h3>Founder Burnout</h3>
+          <p>Juggling marketing, finance, product, and strategy alone is unsustainable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SOLUTION SECTION
+       ============================================= -->
+  <section class="solution-section" id="solution">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">💡</span> The Solution</span>
+        <h2>What Nebulaa helps you <span class="gradient-text">achieve</span></h2>
+      </div>
+
+      <div class="solution-grid">
+        <div class="solution-visual reveal-rotate">
+          <div class="orbit-container">
+            <div class="orbit-ring">
+              <div class="orbit-center">N</div>
+              <div class="orbit-item" style="background: rgba(236,72,153,0.15); border-color: rgba(236,72,153,0.3);">🚀
+              </div>
+              <div class="orbit-item" style="background: rgba(6,182,212,0.15); border-color: rgba(6,182,212,0.3);">💰
+              </div>
+              <div class="orbit-item" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3);">🧠
+              </div>
+              <div class="orbit-item" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3);">⚙️
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="solution-benefits stagger-children">
+          <div class="benefit-item reveal-right">
+            <div class="benefit-icon" style="background: rgba(236,72,153,0.1);">🎯</div>
+            <div class="benefit-text">
+              <h3>Compounding Marketing</h3>
+              <p>Build marketing efforts that grow over time. Know exactly what to say and who to target.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal-right">
+            <div class="benefit-icon" style="background: rgba(6,182,212,0.1);">💡</div>
+            <div class="benefit-text">
+              <h3>Financial Clarity</h3>
+              <p>Track burn rate, revenue, and unit economics in real-time with AI-powered insights.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal-right">
+            <div class="benefit-icon" style="background: rgba(16,185,129,0.1);">📋</div>
+            <div class="benefit-text">
+              <h3>Strategic Alignment</h3>
+              <p>Bridge the gap between your vision and daily execution with structured decision-making.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal-right">
+            <div class="benefit-icon" style="background: rgba(245,158,11,0.1);">🔄</div>
+            <div class="benefit-text">
+              <h3>Product-Market Fit</h3>
+              <p>Validate ideas against real user needs. Build what actually matters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PRODUCTS / AGENTS SECTION
+       — FIX: Added mockup screenshots for each product
+       — FIX: Added feature tags for quick scanning
+       ============================================= -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">🤖</span> Meet Our Agents</span>
+        <h2>Four specialised AI agents, <span class="gradient-text">one suite</span></h2>
+        <p>Each agent focuses on a critical area of your business so you don't have to.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- GRAVITY — Marketing -->
+        <div class="product-card gravity reveal-scale" id="gravity">
+          <div class="product-card-header">
+            <div class="product-icon">🚀</div>
+            <div class="product-meta">
+              <h3>Gravity</h3>
+              <span class="product-label">Marketing AI Agent</span>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p>Build compounding marketing. AI-powered campaign creation that adapts to your audience in real-time.
+              Analyse competitors and find the right influencers automatically.</p>
+            <div class="product-features">
+              <span class="product-feature-tag">Smart Campaigns</span>
+              <span class="product-feature-tag">Influencer Matching</span>
+              <span class="product-feature-tag">Competitor Intel</span>
+              <span class="product-feature-tag">Multi-Platform</span>
+              <span class="product-feature-tag">Analytics</span>
+            </div>
+          </div>
+          <!-- FIX: Product screenshot mockup — original had none -->
+          <div class="product-screenshot">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-content" style="width:85%; padding-top:20px;">
+              <div style="display:flex; gap:12px; width:100%;">
+                <div
+                  style="flex:1; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.15); border-radius:6px; height:50px;">
+                </div>
+                <div
+                  style="flex:1; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.1); border-radius:6px; height:50px;">
+                </div>
+              </div>
+              <div
+                style="width:100%; display:grid; grid-template-columns:repeat(5,1fr); gap:4px; align-items:end; height:60px; margin-top:8px;">
+                <div style="background:rgba(236,72,153,0.15); border-radius:3px 3px 0 0; height:40%;"></div>
+                <div style="background:rgba(236,72,153,0.25); border-radius:3px 3px 0 0; height:65%;"></div>
+                <div style="background:rgba(236,72,153,0.2); border-radius:3px 3px 0 0; height:50%;"></div>
+                <div style="background:rgba(236,72,153,0.35); border-radius:3px 3px 0 0; height:80%;"></div>
+                <div style="background:rgba(236,72,153,0.4); border-radius:3px 3px 0 0; height:95%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-actions">
+            <button class="btn btn-primary btn-sm" onclick="openTrialModal()">Try Gravity Free</button>
+            <a href="#" class="btn btn-secondary btn-sm">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- INFINITY — Finance -->
+        <div class="product-card infinity reveal-scale delay-1" id="infinity">
+          <div class="product-card-header">
+            <div class="product-icon">💰</div>
+            <div class="product-meta">
+              <h3>Infinity</h3>
+              <span class="product-label">Finance AI Agent</span>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p>So you don't run out of money. Track revenue, manage burn rate, forecast runway, and understand your unit
+              economics — all with AI-driven financial insights.</p>
+            <div class="product-features">
+              <span class="product-feature-tag">Burn Rate Tracking</span>
+              <span class="product-feature-tag">Revenue Forecast</span>
+              <span class="product-feature-tag">Unit Economics</span>
+              <span class="product-feature-tag">Cash Flow</span>
+            </div>
+          </div>
+          <div class="product-screenshot">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-content" style="width:85%; padding-top:20px;">
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%;">
+                <div
+                  style="background:rgba(6,182,212,0.08); border:1px solid rgba(6,182,212,0.15); border-radius:6px; height:40px;">
+                </div>
+                <div
+                  style="background:rgba(6,182,212,0.08); border:1px solid rgba(6,182,212,0.15); border-radius:6px; height:40px;">
+                </div>
+                <div
+                  style="background:rgba(6,182,212,0.08); border:1px solid rgba(6,182,212,0.15); border-radius:6px; height:40px;">
+                </div>
+              </div>
+              <div
+                style="width:100%; background:rgba(6,182,212,0.04); border:1px solid rgba(6,182,212,0.08); border-radius:6px; height:70px; margin-top:8px;">
+              </div>
+            </div>
+          </div>
+          <div class="product-card-actions">
+            <button class="btn btn-primary btn-sm" onclick="openTrialModal()">Try Infinity Free</button>
+            <a href="#" class="btn btn-secondary btn-sm">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- SINGULARITY — Strategy -->
+        <div class="product-card singularity reveal-scale delay-2" id="singularity">
+          <div class="product-card-header">
+            <div class="product-icon">🧠</div>
+            <div class="product-meta">
+              <h3>Singularity</h3>
+              <span class="product-label">Strategy AI Agent</span>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p>Bridge the gap between vision and execution. Get structured strategic frameworks, competitive analysis,
+              and actionable growth playbooks powered by AI.</p>
+            <div class="product-features">
+              <span class="product-feature-tag">Growth Strategy</span>
+              <span class="product-feature-tag">Competitive Analysis</span>
+              <span class="product-feature-tag">Decision Frameworks</span>
+              <span class="product-feature-tag">Playbooks</span>
+            </div>
+          </div>
+          <div class="product-screenshot">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-content" style="width:85%; padding-top:20px;">
+              <div
+                style="width:100%; height:40px; background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.12); border-radius:6px; margin-bottom:8px;">
+              </div>
+              <div style="display:flex; gap:8px; width:100%;">
+                <div
+                  style="flex:1; height:65px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.15); border-radius:6px;">
+                </div>
+                <div
+                  style="flex:1; height:65px; background:rgba(16,185,129,0.05); border:1px solid rgba(16,185,129,0.1); border-radius:6px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-actions">
+            <span class="btn btn-secondary btn-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+          </div>
+        </div>
+
+        <!-- ATOM — Product Foundation -->
+        <div class="product-card atom reveal-scale delay-3" id="atom">
+          <div class="product-card-header">
+            <div class="product-icon">⚙️</div>
+            <div class="product-meta">
+              <h3>Atom</h3>
+              <span class="product-label">Product Foundation Agent</span>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p>Build for real user needs. Validate product ideas, map user journeys, and ensure every feature you build
+              moves the needle on product-market fit.</p>
+            <div class="product-features">
+              <span class="product-feature-tag">User Research</span>
+              <span class="product-feature-tag">Feature Prioritisation</span>
+              <span class="product-feature-tag">Journey Mapping</span>
+              <span class="product-feature-tag">PMF Tracking</span>
+            </div>
+          </div>
+          <div class="product-screenshot">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-content" style="width:85%; padding-top:20px;">
+              <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px; width:100%;">
+                <div
+                  style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.15); border-radius:6px; height:50px;">
+                </div>
+                <div
+                  style="background:rgba(245,158,11,0.06); border:1px solid rgba(245,158,11,0.1); border-radius:6px; height:50px;">
+                </div>
+              </div>
+              <div
+                style="width:100%; height:55px; background:rgba(245,158,11,0.04); border:1px solid rgba(245,158,11,0.08); border-radius:6px; margin-top:8px;">
+              </div>
+            </div>
+          </div>
+          <div class="product-card-actions">
+            <span class="btn btn-secondary btn-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       HOW IT WORKS
+       ============================================= -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">⚡</span> How It Works</span>
+        <h2>Up and running in <span class="gradient-text">minutes</span></h2>
+        <p>No complex setup. No technical skills required. Just connect and go.</p>
+      </div>
+
+      <div class="steps-grid stagger-children">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Sign Up Instantly</h3>
+          <p>Create your account with just an email. No credit card, no lengthy forms — start exploring immediately.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Connect Your Tools</h3>
+          <p>Link your social media, analytics, and finance tools. Nebulaa integrates with what you already use.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Ask Your Agents</h3>
+          <p>Talk to your AI agents in natural language. Ask questions, get structured answers and recommendations.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h3>Execute & Grow</h3>
+          <p>Take action on AI insights. Launch campaigns, optimise spend, and make smarter decisions — faster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SOCIAL PROOF
+       — FIX: Original site had ZERO social proof
+       ============================================= -->
+  <section class="social-proof-section" id="social-proof">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">📊</span> Trusted by Founders</span>
+        <h2>Results that <span class="gradient-text">speak</span></h2>
+      </div>
+
+      <div class="metrics-row stagger-children">
+        <div class="metric-card reveal-glow">
+          <div class="metric-value">20+</div>
+          <div class="metric-label">Hours Saved per Week</div>
+        </div>
+        <div class="metric-card reveal-glow">
+          <div class="metric-value">340%</div>
+          <div class="metric-label">Avg. Engagement Increase</div>
+        </div>
+        <div class="metric-card reveal-glow">
+          <div class="metric-value">10×</div>
+          <div class="metric-label">Faster Campaign Deploy</div>
+        </div>
+        <div class="metric-card reveal-glow">
+          <div class="metric-value">500+</div>
+          <div class="metric-label">Campaigns Created</div>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal-right">
+          <p>"Nebulaa's Gravity agent completely transformed how we do marketing. We went from spending 15 hours a week
+            on social media to letting AI handle it — and our engagement tripled."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AR</div>
+            <div class="testimonial-info">
+              <span>Arjun R.</span>
+              <small>Founder, TechVault</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-right delay-1">
+          <p>"The financial insights from Infinity saved us from a cash crunch we didn't even see coming. It's like
+            having a CFO who never sleeps."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PS</div>
+            <div class="testimonial-info">
+              <span>Priya S.</span>
+              <small>Co-founder, GreenLeaf</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-right delay-2">
+          <p>"What I love about Nebulaa is that it doesn't try to replace my thinking — it enhances it. The strategic
+            frameworks from Singularity were game-changing."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MK</div>
+            <div class="testimonial-info">
+              <span>Mohan K.</span>
+              <small>CEO, UrbanFlow</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       WHO IT'S FOR
+       ============================================= -->
+  <section class="audience-section" id="audience">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">👥</span> Who It's For</span>
+        <h2>Built for <span class="gradient-text">early & growth-stage</span> founders</h2>
+      </div>
+
+      <div class="audience-grid stagger-children">
+        <div class="audience-card reveal-left">
+          <div class="card-icon">🏗️</div>
+          <div>
+            <h3>Shaping Your Business Model</h3>
+            <p>You're figuring out what works. Nebulaa helps you test assumptions and iterate faster with data.</p>
+          </div>
+        </div>
+        <div class="audience-card reveal-right">
+          <div class="card-icon">🧪</div>
+          <div>
+            <h3>Testing the Market</h3>
+            <p>Running experiments, launching MVPs, or validating product-market fit. Let AI do the heavy lifting.</p>
+          </div>
+        </div>
+        <div class="audience-card reveal-left">
+          <div class="card-icon">💳</div>
+          <div>
+            <h3>Limited Capital, Big Ambitions</h3>
+            <p>Every dollar matters. Nebulaa helps you spend smarter and track every cent with financial intelligence.
+            </p>
+          </div>
+        </div>
+        <div class="audience-card reveal-right">
+          <div class="card-icon">📈</div>
+          <div>
+            <h3>Building Compounding Impact</h3>
+            <p>You want marketing that grows over time, not one-off posts. Build a foundation that compounds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PRICING SECTION
+       — FIX: Original site had NO pricing page
+       ============================================= -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">💎</span> Pricing</span>
+        <h2>Simple, <span class="gradient-text">transparent</span> pricing</h2>
+        <p>Start free. Upgrade when you're ready. No surprises.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Free Trial -->
+        <div class="pricing-card reveal-flip">
+          <div class="plan-name">Starter</div>
+          <div class="plan-desc">Perfect for exploring Nebulaa</div>
+          <div class="plan-price">Free</div>
+          <div class="plan-billing">No credit card required</div>
+          <ul class="pricing-features">
+            <li>Access to Gravity (Marketing AI)</li>
+            <li>5 AI-generated campaigns/month</li>
+            <li>Basic analytics dashboard</li>
+            <li>1 connected social account</li>
+            <li>Email support</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openTrialModal()">Start Free →</button>
+        </div>
+
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured reveal-flip delay-1">
+          <div class="plan-name">Pro</div>
+          <div class="plan-desc">For founders ready to scale</div>
+          <div class="plan-price">$49<span>/month</span></div>
+          <div class="plan-billing">Billed annually at $468/yr</div>
+          <ul class="pricing-features">
+            <li>All Starter features</li>
+            <li>Unlimited campaigns</li>
+            <li>Gravity + Infinity agents</li>
+            <li>Advanced analytics & reports</li>
+            <li>10 connected accounts</li>
+            <li>Influencer matching</li>
+            <li>Competitor intelligence</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openTrialModal()">Start Pro Trial →</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card reveal-flip delay-2">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-desc">For teams and agencies</div>
+          <div class="plan-price">Custom</div>
+          <div class="plan-billing">Tailored to your needs</div>
+          <ul class="pricing-features">
+            <li>All Pro features</li>
+            <li>All 4 AI agents</li>
+            <li>Unlimited connected accounts</li>
+            <li>Custom integrations</li>
+            <li>Dedicated account manager</li>
+            <li>Team collaboration</li>
+            <li>SLA & onboarding support</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openDemoModal()">Contact Sales →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       WHAT NEBULAA IS NOT
+       ============================================= -->
+  <section class="not-section" id="about">
+    <div class="container">
+      <div class="section-header reveal-blur">
+        <span class="badge"><span class="icon">🚫</span> Why Nebulaa</span>
+        <h2>What Nebulaa is <span class="gradient-text">not</span></h2>
+        <p>We're very intentional about what we build. Here's what sets us apart.</p>
+      </div>
+
+      <div class="not-grid stagger-children">
+        <div class="not-card reveal">
+          <div class="not-icon">📋</div>
+          <h3>Not a Task Manager</h3>
+          <p>We don't manage your to-do list. We help you make the strategic decisions that actually matter.</p>
+        </div>
+        <div class="not-card reveal">
+          <div class="not-icon">📊</div>
+          <h3>Not Just a Dashboard</h3>
+          <p>Dashboards show data. Nebulaa interprets it, recommends actions, and helps you execute them.</p>
+        </div>
+        <div class="not-card reveal">
+          <div class="not-icon">🤖</div>
+          <h3>Not a Generic AI</h3>
+          <p>Each agent is purpose-built for a specific business domain — not a ChatGPT wrapper.</p>
+        </div>
+        <div class="not-card reveal">
+          <div class="not-icon">🔧</div>
+          <h3>Not a Tool Replacement</h3>
+          <p>We work alongside your existing stack. Nebulaa enhances, not replaces, what you already use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FINAL CTA
+       — FIX: Quick email sign-up instead of only "Book Demo"
+       ============================================= -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal-blur">
+        <span class="badge"><span class="icon">🚀</span> Limited Early Access</span>
+        <h2>Ready to stop <span class="gradient-text">juggling?</span></h2>
+        <p>Join hundreds of founders who are growing smarter with AI. Start your free trial in seconds — just enter your
+          email.</p>
+
+        <!-- FIX: Simple email form — no lengthy sign-up -->
+        <form class="quick-start-form" onsubmit="handleQuickStart(event)">
+          <input type="email" id="ctaEmail" placeholder="Enter your work email" required />
+          <button type="submit" class="btn btn-primary">Start Free →</button>
+        </form>
+        <p class="quick-start-note">No credit card required · Free starter plan · Setup in 2 minutes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+       — FIX: Added proper footer with links
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">NEBULAA</a>
+          <p>AI-powered business suite helping founders make smarter decisions in marketing, finance, and strategy.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="#gravity">Gravity — Marketing</a>
+          <a href="#infinity">Infinity — Finance</a>
+          <a href="#singularity">Singularity — Strategy</a>
+          <a href="#atom">Atom — Foundation</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Centre</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nebulaa. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       TRIAL MODAL — Simple Email Sign-Up
+       — FIX: Only email required for trial (vs full company info)
+       ============================================= -->
+  <div class="modal-overlay" id="trialModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeTrialModal()">&times;</button>
+
+      <div class="modal-steps">
+        <div class="modal-step active" id="trialStep1Indicator"></div>
+        <div class="modal-step" id="trialStep2Indicator"></div>
+      </div>
+
+      <!-- Step 1: Just email -->
+      <div id="trialStep1">
+        <h2>Start Your Free Trial 🚀</h2>
+        <p>No credit card needed. No lengthy forms. Just your email to get started instantly.</p>
+        <form class="modal-form" onsubmit="handleTrialStep1(event)">
+          <div class="form-group">
+            <label for="trialEmail">Work Email</label>
+            <input type="email" id="trialEmail" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="trialPassword">Create Password</label>
+            <input type="password" id="trialPassword" placeholder="Min. 8 characters" required minlength="8" />
+          </div>
+          <button type="submit" class="btn btn-primary">Create Account & Start Trial →</button>
+          <p class="form-note">You can add company details later from your dashboard</p>
+        </form>
+      </div>
+
+      <!-- Step 2: Optional company info (shown after sign-up) -->
+      <div id="trialStep2" style="display:none;">
+        <h2>Almost there! 🎉</h2>
+        <p>Help us personalise your experience (optional — you can skip this).</p>
+        <form class="modal-form" onsubmit="handleTrialStep2(event)">
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" placeholder="Your startup name" />
+          </div>
+          <div class="form-group">
+            <label for="companyWebsite">Website (optional)</label>
+            <input type="url" id="companyWebsite" placeholder="https://yourcompany.com" />
+          </div>
+          <div class="form-group">
+            <label for="companyIndustry">Industry</label>
+            <input type="text" id="companyIndustry" placeholder="e.g., SaaS, E-commerce, FinTech" />
+          </div>
+          <button type="submit" class="btn btn-primary">Complete Setup →</button>
+          <button type="button" class="btn btn-secondary" onclick="skipTrialStep2()"
+            style="width:100%; justify-content:center;">Skip for Now →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       DEMO MODAL — Book a Demo (Full Info)
+       ============================================= -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeDemoModal()">&times;</button>
+      <h2>Book a Demo 📅</h2>
+      <p>See Nebulaa in action. Our team will walk you through a personalised demo.</p>
+      <form class="demo-modal-form" onsubmit="handleDemoSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="demoName">Full Name</label>
+            <input type="text" id="demoName" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="demoRole">Your Role</label>
+            <input type="text" id="demoRole" placeholder="Founder, CEO, CMO..." required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="demoEmail">Work Email</label>
+          <input type="email" id="demoEmail" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="demoCompany">Company Name</label>
+          <input type="text" id="demoCompany" placeholder="Your company" required />
+        </div>
+        <div class="form-group">
+          <label for="demoMessage">Message (optional)</label>
+          <textarea id="demoMessage" placeholder="Tell us about your needs..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Request Demo →</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
